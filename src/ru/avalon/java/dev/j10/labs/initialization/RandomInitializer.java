@@ -1,5 +1,6 @@
 package ru.avalon.java.dev.j10.labs.initialization;
 
+import java.util.Random;
 import ru.avalon.java.dev.j10.labs.Initializer;
 
 /**
@@ -25,5 +26,12 @@ public class RandomInitializer implements Initializer {
         /*
          * TODO(Студент): Реализовать метод initialize класса RandomInitializer
          */
+        
+        Random rand = new Random();
+        
+        for (int i = 0; i < array.length; i++) {
+            array[i] = rand.nextInt(101) - 50;
+        }
+        
     }
 }
