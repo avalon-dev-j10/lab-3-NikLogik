@@ -41,5 +41,11 @@ public class FibonacciInitializer implements Initializer {
             }
             array[i] = array[i-1] + array[i-2];
         }
+        
+        /*  TODO (Проверка№1 ЛР№3)
+            - Добавить коментарии к полям и методам класса
+            - Перед обращением к массиву следует делать проверку на правильность массива,
+            если array = null, возникает ошибка!!!
+        */
     }
 }

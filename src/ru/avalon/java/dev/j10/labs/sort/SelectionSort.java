@@ -21,6 +21,13 @@ public class SelectionSort implements Sort {
         /*
          * TODO(Студент): Реализовать метод sort класса SelectionSort
          */
+        
+        /*  TODO (Проверка№1 ЛР№3)
+            - Добавить коментарии к полям и методам класса
+            - Перед обращением к массиву следует делать проверку на правильность массива,
+            если array = null, возникает ошибка!!!
+        */
+        
         for (int i = 0; i < array.length-1; i++) {
             int least = i;
             for (int j = i+1; j < array.length; j++) {

@@ -23,6 +23,12 @@ public class BubbleSort implements Sort {
          boolean sorted = false;
         int temp;
         
+        /*  TODO (Проверка№1 ЛР№3)
+            - Добавить коментарии к полям и методам класса
+            - Перед обращением к массиву следует делать проверку на правильность массива,
+            если array = null, возникает ошибка!!!
+        */
+        
         while(!sorted){
             sorted = true;
             for (int i = 0; i < array.length-1; i++) {
