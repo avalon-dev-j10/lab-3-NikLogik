@@ -27,18 +27,19 @@ public class SelectionSort implements Sort {
             - Перед обращением к массиву следует делать проверку на правильность массива,
             если array = null, возникает ошибка!!!
         */
-        
-        for (int i = 0; i < array.length-1; i++) {
-            int least = i;
-            for (int j = i+1; j < array.length; j++) {
-                if(array[j]<array[least]){
-                    least = j;
+        if (array!=null || array.length>0) {            //проверяем входящий массив на ошибку
+            for (int i = 0; i < array.length-1; i++) {  //проходим циклом по элементам массива
+            int least = i;                              //объявляем переменную для хранения индекса элемента с минимальным значением
+                for (int j = i+1; j < array.length; j++) {  //проходим вложенным циклом по элементам массива 
+                    if(array[j]<array[least]){              //находим элемент с минимальным значением в массиве
+                        least = j;                          
+                    }
                 }
-            }
             
-            int tmp = array[i];
-            array[i] = array[least];
-            array[least] = tmp;
+                int tmp = array[i];                     //обмениваем значение найденного минимального элемента в хвосте массива с неотсортированной позицией
+                array[i] = array[least];
+                array[least] = tmp;
+            }
         }
     }
 }

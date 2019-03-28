@@ -33,12 +33,12 @@ public class RandomInitializer implements Initializer {
             - Перед обращением к массиву следует делать проверку на правильность массива,
             если array = null, возникает ошибка!!!
         */
+        if (array!=null || array.length>0) {        //проверяем входящий массив на ошибку
+            Random rand = new Random();             //создаем ссылку на экземпляр класса Random
         
-        Random rand = new Random();
-        
-        for (int i = 0; i < array.length; i++) {
-            array[i] = rand.nextInt(101) - 50;
+            for (int i = 0; i < array.length; i++) {    //проходим циклом по всем элементам массива
+                array[i] = rand.nextInt(101) - 50;      //инициализируем все элементами массива случайными числами
+            }
         }
-        
     }
 }

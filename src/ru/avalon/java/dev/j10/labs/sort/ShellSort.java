@@ -20,7 +20,7 @@ public class ShellSort implements Sort {
     /**
      * {@inheritDoc}
      */
-    public void sort(int[] array) {
+    
         /*
          * TODO(Студент): Реализовать метод sort класса ShellSort
          */
@@ -30,22 +30,24 @@ public class ShellSort implements Sort {
             - Перед обращением к массиву следует делать проверку на правильность массива,
             если array = null, возникает ошибка!!!
         */
-        
-        int h = 1;
-        while (h*3 < array.length)
+    public void sort(int[] array) {             
+        if (array!=null || array.length>0) {    //проверяем входящий массив на ошибку
+            int h = 1;                  //инициализируем переменную для хранения значения инкремента
+        while (h*3 < array.length)      //определяем максимальное значение инкремента
             h = h * 3 + 1;
 
         while(h >= 1) {
-            hSort(array, h);
-            h = h/3;
+            hSort(array, h);            //передаем в метод сортировки массив и значение инкремента
+            h = h/3;                    //с каждым циклом уменьшаем инкремент пока он не будет равен 1 или меньше
+            }
         }
     }
 
-    private void hSort(int[] array, int h) {
-        for (int i = h; i < array.length; i++) {
-            for (int j = i; j >= h; j = j - h) {
-                if (array[j] < array[j - h]){
-                    int tmp = array[j];
+    private void hSort(int[] array, int h) {            //метод для сортировки массива методом выбора с шагом, равным переданному значению инкремента
+        for (int i = h; i < array.length; i++) {        //проходим внешним циклом по элементам массива начинася с элемента по индексу значения инкремента
+            for (int j = i; j >= h; j = j - h) {        //проходим вложенным циклом по элементам массива с шагом, равным инкременту
+                if (array[j] < array[j - h]){           //находим элемент с меньшим значением. чем текущий на вложенном цикле
+                    int tmp = array[j];                 //обмениваем значение найденного минимального элемента в хвосте массива с неотсортированной позицией
                     array[j] = array[j - h];
                     array[j - h] = tmp; 
                 } else break;

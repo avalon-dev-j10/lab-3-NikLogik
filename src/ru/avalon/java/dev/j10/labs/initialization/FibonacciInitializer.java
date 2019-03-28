@@ -30,17 +30,20 @@ public class FibonacciInitializer implements Initializer {
         /*
          * TODO(Студент): Реализовать метод initialize класса FibonacciInitializer
          */
-        for(int i = 0; i<array.length;i++){
-            if(i==0){
-                array[i] = 0;
-                continue;
-            }
-            if(i==1){
-                array[i] = 1;
-                continue;
-            }
-            array[i] = array[i-1] + array[i-2];
+        if (array!=null || array.length>0) {            //проверяем входящий массив на ошибку
+                for(int i = 0; i<array.length;i++){     //проходим циклом по всем элементам массива
+                if(i==0){                               //инициализируем первый элепмент массива значением "0"
+                    array[i] = 0;
+                    continue;
+                }
+                if(i==1){                               //инициализируем второй элемент массива значением "1"
+                    array[i] = 1;
+                    continue;
+                }
+                array[i] = array[i-1] + array[i-2];     //инициализируем все оставшиеся элементами массива числами, 
+            }                                           //равными сумме двух элементов, предшествующих ему
         }
+        
         
         /*  TODO (Проверка№1 ЛР№3)
             - Добавить коментарии к полям и методам класса
