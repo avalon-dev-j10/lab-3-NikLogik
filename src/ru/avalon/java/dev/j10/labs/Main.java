@@ -1,9 +1,67 @@
 package ru.avalon.java.dev.j10.labs;
 
+import java.util.Arrays;
+import ru.avalon.java.dev.j10.labs.initialization.FibonacciInitializer;
+import ru.avalon.java.dev.j10.labs.initialization.RandomInitializer;
+import ru.avalon.java.dev.j10.labs.sort.BubbleSort;
+import ru.avalon.java.dev.j10.labs.sort.SelectionSort;
+import ru.avalon.java.dev.j10.labs.sort.ShellSort;
+
 public class Main {
 
     public static void main(String[] args) {
-        int[] array;
+        int[] array = new int[20];
+        
+        System.out.println("Инициализация массива числовым рядом Фибоначи---->");
+        
+        FibonacciInitializer fibonacciInit = new FibonacciInitializer();
+        fibonacciInit.initialize(array);
+        
+        int sumArray = 0;       //суммирование всех значений массива
+        for(int i : array){
+            sumArray +=i;
+        }
+        
+        System.out.println("Содержание массива после инициализации рядом Фибоначи: " + Arrays.toString(array));
+        System.out.println("Сумма массива: " + sumArray);
+        System.out.println("");
+        
+        
+        System.out.println("Инициализация массива случайными числами---->");
+        
+        RandomInitializer randomInit = new RandomInitializer();
+        randomInit.initialize(array);
+        
+        System.out.println("Содержание массива до сортировки пузырьком: " + Arrays.toString(array));
+        
+        BubbleSort bubble = new BubbleSort();
+        bubble.sort(array);
+        
+        System.out.println("Содержание массива после сортировки пузырьком: " + Arrays.toString(array));
+        System.out.println("");
+        
+        System.out.println("Инициализация массива случайными числами---->");
+        
+        randomInit.initialize(array);
+        
+        System.out.println("Содержание массива до сортировки выбором: " + Arrays.toString(array));
+        
+        SelectionSort select = new SelectionSort();
+        select.sort(array);
+        
+        System.out.println("Содержание массива после сортировки выбором: " + Arrays.toString(array));
+        System.out.println("");
+        
+        System.out.println("Инициализация массива случайными числами---->");
+        randomInit.initialize(array);
+        
+        System.out.println("Содержание массива до сортировки Шелла: " + Arrays.toString(array));
+        
+        ShellSort shell = new ShellSort();
+        shell.sort(array);
+        
+        System.out.println("Содержание массива после сортировки Шелла: " + Arrays.toString(array));
+    
 
 	    /*
 	     * TODO(Студент): Выполнить действия над массивом чисел
